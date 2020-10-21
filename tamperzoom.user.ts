@@ -13,8 +13,8 @@ const clickButton = (classname: string) => {
     button.click();
 }
 
-const toggleAudio = () => clickButton('join-audio-container');
-const toggleVideo = () => clickButton('send-video-container');
+const toggleAudio = () => clickButton('join-audio-container__btn');
+const toggleVideo = () => clickButton('send-video-container__btn');
 
 document.addEventListener('keydown', e => {
     if (!e.shiftKey && !e.ctrlKey && e.altKey && !e.metaKey) {
