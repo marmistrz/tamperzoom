@@ -11,15 +11,23 @@
 const getFirstElementByClassName = (classname: string): HTMLElement | undefined => {
     return document.getElementsByClassName(classname)[0] as HTMLElement;
 }
+type TimerHandle = number;
 
 const clickButton = (classname: string) => {
     const button = getFirstElementByClassName(classname);
     button?.click();
 }
 
+const hideTimeout = 3 * 1000;
+const footerClass = 'footer';
+const footerHiddenClass = 'footer footer--hidden';
+let panelHideTimerId: TimerHandle | undefined;
+
 const showToolbar = () => {
-    const footer = getFirstElementByClassName('footer');
-    footer!!.className = 'footer';
+    const footer = getFirstElementByClassName(footerClass)!!;
+    footer.className = footerClass;
+    clearTimeout(panelHideTimerId);
+    panelHideTimerId = setTimeout(() => footer.className = footerHiddenClass, hideTimeout);
 }
 
 const toggleAudio = () => clickButton('join-audio-container__btn');
