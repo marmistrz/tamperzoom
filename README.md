@@ -12,6 +12,8 @@ Consider self-hosting Jitsi Meet (it's open source!) or using another WebRTC-bas
 3. Build the project using: `tsc`
 4. Open `dist/tamperzoom.user.js` in your browser to install the script.
 
+Alternatively, you can use the prebuild `user.js` file from the CI artifacts.
+
 ## Supported shortcuts
 * alt+a: toggle audio
 * alt+v: toggle video
